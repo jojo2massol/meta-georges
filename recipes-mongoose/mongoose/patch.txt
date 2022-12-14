@@ -1,0 +1,19 @@
+commit 2eb67432aaaf459e249016011126b276af2b673e
+Author: Georges de Massol <jojo2massol@gmail.com>
+Date:   Tue Dec 13 15:05:45 2022 +0100
+
+    open network
+
+diff --git a/examples/websocket-server/main.c b/examples/websocket-server/main.c
+index fe6f3680..2895c7a2 100644
+--- a/examples/websocket-server/main.c
++++ b/examples/websocket-server/main.c
+@@ -5,7 +5,7 @@
+ 
+ #include "mongoose.h"
+ 
+-static const char *s_listen_on = "ws://localhost:8000";
++static const char *s_listen_on = "ws://0.0.0.0:8000";
+ static const char *s_web_root = ".";
+ 
+ // This RESTful server implements the following endpoints:
