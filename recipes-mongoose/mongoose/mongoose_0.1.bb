@@ -33,8 +33,8 @@ DEPENDS = "iptables libpcap openssl initscripts"
 
 do_configure () {
 	# Specify any needed configure commands here
-	# apply patch.txt to main.c
-  patch -p1 < ${RECIPE_DIR}/patch.txt
+	# apply mongoose.patch to main.c
+  patch -p1 < ${RECIPE_DIR}/mongoose.patch
 }
 
 do_compile () {
