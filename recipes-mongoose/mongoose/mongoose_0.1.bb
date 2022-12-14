@@ -45,6 +45,9 @@ do_compile () {
 do_install() {
   install -d ${D}${bindir}
   install -m 0755 ${S}/examples/websocket-server/example ${D}${bindir}/mongoose-websocket-server
+  #copy test.html in /var/www/html
+  install -d ${D}/var/www/html
+  install -m 0644 ${S}/examples/websocket-server//test.html ${D}/var/www/html/test.html
 
   #add the program to run at startup (init.d)
   install -d ${D}${sysconfdir}/init.d
