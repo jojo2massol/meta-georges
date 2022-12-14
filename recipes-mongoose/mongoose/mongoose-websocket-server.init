@@ -10,8 +10,8 @@
 # Description:       This script is used to start the mongoose-websocket-server at system startup.
 ### END INIT INFO
 
-# add -A INPUT -p all --dport 8000 -j ACCEPT to iptables if that port is not open
-iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
+# add -A INPUT -p all --dport 80 -j ACCEPT to iptables if that port is not open
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 
 # Start the server
 mongoose-websocket-server &

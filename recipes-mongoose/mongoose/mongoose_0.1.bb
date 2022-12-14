@@ -63,7 +63,7 @@ do_install() {
   #open port 8000 in iptables
   # firewall rules are in /etc/firewall.rules
   # add the rule to the file
-  # echo "-A INPUT -p tcp --dport 8000 -j ACCEPT" >> ${D}${sysconfdir}/firewall.rules
+  # echo "-A INPUT -p tcp --dport 80 -j ACCEPT" >> ${D}${sysconfdir}/firewall.rules
   # but i can't write in this file, because that file is already provided by package firewall.
   # so I'll add it to the init script
 }

@@ -1,11 +1,11 @@
-commit c6df8f14dace302ded7cb4ab8dee817d4e128687
+commit 2d412f65ccfe4903cd33e209d70e6740cd922567
 Author: Georges de Massol <jojo2massol@gmail.com>
-Date:   Wed Dec 14 18:42:19 2022 +0100
+Date:   Wed Dec 14 19:37:26 2022 +0100
 
     patch for html server
 
 diff --git a/examples/websocket-server/main.c b/examples/websocket-server/main.c
-index cacd2662..02ad5e51 100644
+index cacd2662..c334891c 100644
 --- a/examples/websocket-server/main.c
 +++ b/examples/websocket-server/main.c
 @@ -5,8 +5,8 @@
@@ -14,8 +14,21 @@ index cacd2662..02ad5e51 100644
  
 -static const char *s_listen_on = "ws://localhost:8000";
 -static const char *s_web_root = ".";
-+static const char *s_listen_on = "ws://0.0.0.0:8000";
++static const char *s_listen_on = "ws://0.0.0.0:80";
 +static const char *s_web_root = "/var/www/html";
  
  // This RESTful server implements the following endpoints:
  //   /websocket - upgrade to Websocket, and implement websocket echo server
+diff --git a/examples/websocket-server/test.html b/examples/websocket-server/test.html
+index f0546681..a72ca04f 100644
+--- a/examples/websocket-server/test.html
++++ b/examples/websocket-server/test.html
+@@ -2,7 +2,7 @@
+ <html lang="en">
+   <body>
+     <h1>Websocket test client</h1>
+-    <input id="url" type="text" placeholder="Type URL" value="ws://localhost:8000/websocket" style="width:20em;" /> 
++    <input id="url" type="text" placeholder="Type URL" value="ws://localhost:80/websocket" style="width:20em;" /> 
+     <button id="connect">connect</button>
+     <div style="height: 0.3em;">&nbsp;</div>
+     <input id="message" type="text" placeholder="Type message" style="width: 20em;" /> 
